@@ -6,163 +6,269 @@
   <meta name="theme-color" content="#0f3d3a" />
   <title>千岛湖亲子自驾攻略</title>
   <style>
-    :root {
-      --accent: #0f3d3a;
-      --bg: #f4efe6;
-      --card: #fffdf8;
-      --ink: #1c2a28;
-      --muted: #5b6b68;
-      --line: #e4d8c6;
-      --ok: #2c6e4f;
-    }
+    :root { --accent:#0f3d3a; --bg:#f4efe6; --card:#fffdf8; --ink:#1c2a28; --muted:#5b6b68; --line:#e4d8c6; --ok:#2c6e4f; }
     * { box-sizing: border-box; }
     html, body { margin: 0; background: var(--bg); color: var(--ink); }
-    body {
-      font: 16px/1.55 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", system-ui, sans-serif;
-      padding-bottom: 84px;
-    }
+    body { font: 16px/1.55 "PingFang SC","Hiragino Sans GB","Noto Sans SC",system-ui,sans-serif; padding-bottom: 88px; }
     header { background: var(--accent); color: #f7f1e6; padding: 28px 20px 22px; }
-    header .kicker { margin: 0; font-size: 11px; letter-spacing: .16em; opacity: .8; }
-    h1 { margin: 6px 0 0; font-size: 28px; font-weight: 600; }
+    .kicker { margin: 0; font-size: 11px; letter-spacing: .16em; opacity: .8; }
+    h1 { margin: 6px 0 0; font-size: 26px; font-weight: 600; }
     header .sub { margin: 8px 0 0; font-size: 14px; opacity: .85; }
     .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
     .chip { border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 5px 10px; font-size: 12px; }
-    main { max-width: 720px; margin: 0 auto; padding: 16px 20px 8px; }
+    main { max-width: 760px; margin: 0 auto; padding: 16px 18px 8px; }
     .page { display: none; }
     .page.on { display: block; }
     .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; margin: 12px 0; }
     .card h2 { margin: 0 0 8px; font-size: 18px; }
+    .card h3 { margin: 14px 0 6px; font-size: 16px; }
     .tag { display: inline-block; background: #e6f3ea; color: var(--ok); border-radius: 999px; font-size: 12px; padding: 2px 8px; margin-bottom: 8px; }
+    .tag.warn { background: #fff3e0; color: #9a5b12; }
     .muted { color: var(--muted); font-size: 14px; }
-    ol { margin: 8px 0 0; padding-left: 18px; }
-    ol li { margin: 6px 0; }
+    ol, ul { margin: 8px 0 0; padding-left: 18px; }
+    li { margin: 6px 0; }
     .photo { margin: 12px 0 4px; }
     .photo img { width: 100%; border-radius: 12px; display: block; background: #ddd; }
     .cap { font-size: 12px; color: var(--muted); margin: 6px 0 0; }
     .choice { border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; margin: 8px 0; background: #fbf7f0; }
     .choice.on { background: #eef7f4; border-color: #9fd0c6; }
     .choice strong { display: block; margin-bottom: 2px; }
-    nav {
-      position: fixed; left: 0; right: 0; bottom: 0; z-index: 5;
-      background: #fffdf8; border-top: 1px solid var(--line);
-      padding-bottom: env(safe-area-inset-bottom);
-    }
-    nav div { max-width: 720px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); }
-    nav button {
-      background: none; border: 0; padding: 12px 4px 10px; font: inherit; color: var(--muted);
-    }
+    nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: #fffdf8; border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom); }
+    nav div { max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); }
+    nav button { background: none; border: 0; padding: 12px 4px 10px; font: inherit; color: var(--muted); }
     nav button.on { color: var(--accent); box-shadow: inset 0 -2px 0 var(--accent); font-weight: 600; }
     table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
     th, td { text-align: left; padding: 7px 4px; border-bottom: 1px solid var(--line); vertical-align: top; }
-    th { color: var(--muted); }
+    th { color: var(--muted); font-weight: 600; }
+    .path { list-style: none; padding: 0; margin: 8px 0 0; }
+    .path li { position: relative; padding: 8px 0 8px 28px; border-left: 2px solid #cfe3de; margin: 0 0 0 8px; }
+    .path li:last-child { border-left-color: transparent; }
+    .path b { position: absolute; left: -11px; top: 10px; width: 20px; height: 20px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 11px; display: grid; place-items: center; }
+    .kv { margin: 6px 0; }
+    .kv strong { display: inline-block; min-width: 4.5em; }
   </style>
 </head>
 <body>
-  <header>
-    <p class="kicker">QIANDAO LAKE · FAMILY</p>
-    <h1>千岛湖亲子自驾攻略</h1>
-    <p class="sub">郝力克酒店 · 周五至周日 · 不辣鱼头</p>
-    <div class="chips">
-      <span class="chip">周五 9:30 出发</span>
-      <span class="chip">中心下午船</span>
-      <span class="chip">周六乐园 A</span>
-      <span class="chip">周日收尾 A</span>
-    </div>
-  </header>
-  <main>
-    <section id="home" class="page on">
-      <p class="muted">点底部「周五 / 周六 / 周日」看每天对照。图都标了年份，不合格的不放。</p>
-      <div class="card">
-        <span class="tag">本趟已定</span>
-        <h2>9:30 杭州上城出发</h2>
-        <p class="muted">直奔千岛湖镇吃饭，再坐中心湖区下午船，最后入住郝力克。别先去酒店。东南湖区这趟赶不上。</p>
-      </div>
-      <div class="card">
-        <h2>行程概览</h2>
-        <p><strong>住宿</strong> 郝力克酒店（华美胜地）· 界首乡锦秀路 89 号</p>
-        <p><strong>周五</strong> 镇上淳圆外 → 中心下午船（梅峰 + 月光 / 龙山）</p>
-        <p><strong>周六</strong> 华美胜地 WILD WORLD，不离开度假区</p>
-        <p><strong>周日</strong> 萌宠收尾，中午鱼头，14:00 返上城</p>
-      </div>
-    </section>
+<header>
+  <p class="kicker">QIANDAO LAKE · FAMILY</p>
+  <h1>千岛湖亲子自驾攻略</h1>
+  <p class="sub">郝力克酒店 · 周五至周日 · 不辣鱼头 · 2026-08-24 定稿</p>
+  <div class="chips">
+    <span class="chip">周五 9:30 出发</span>
+    <span class="chip">中心下午船</span>
+    <span class="chip">周六乐园 A</span>
+    <span class="chip">周日收尾 A</span>
+  </div>
+</header>
+<main>
+<section id="home" class="page on">
+  <p class="muted">点底部看每天怎么走。图都标了年份。每天只选一套，不拼。</p>
+  <div class="card">
+    <span class="tag">本趟已定</span>
+    <h2>9:30 杭州上城出发</h2>
+    <p>一家三口（6 岁）。周五直奔<strong>千岛湖镇</strong>吃饭，再坐<strong>中心湖区下午船</strong>，晚上才去郝力克。别先去酒店，酒店在界首华美胜地，离码头大约 45 分钟。</p>
+    <p class="muted">东南湖区这趟赶不上。中心 / 东南船票不通用，当天只选一条船线。</p>
+  </div>
+  <div class="card">
+    <h2>这不是酒店所在的湖湾</h2>
+    <div class="photo"><img src="photos/chunan-aerial-2020.jpg" alt="2020航拍千岛湖镇" /><p class="cap">2020-07 · 航拍淳安县城（千岛湖镇）。酒店在湖另一侧界首，开车 40–50 分钟。别把这张当成华美胜地。</p></div>
+  </div>
+  <div class="card">
+    <h2>三天怎么排</h2>
+    <p class="kv"><strong>周五 A</strong>镇上淳圆外 → 中心码头 → 梅峰缆车 + 月光 / 龙山 → 入住郝力克</p>
+    <p class="kv"><strong>周六 A</strong>不离开华美胜地：蹦床、萌宠、水上，傍晚可选落日游船</p>
+    <p class="kv"><strong>周日 A</strong>上午小项目 → 中午酒店鱼头 → 14:00 返上城</p>
+    <p class="muted">导航一律搜「千岛湖郝力克酒店」。酒店电话 0571-65098888。入住 14:00 后，退房 12:00 前，可提前寄存。</p>
+  </div>
+  <div class="card">
+    <h2>出发前必做</h2>
+    <ul>
+      <li>提前 1–2 天微信「千岛湖旅游」或小程序「玩转千岛湖」约<strong>中心湖区 12:00–14:00</strong>班，孩子也要实名。</li>
+      <li>周五大门票免费，船票仍要买。预约时看停岛有没有<strong>梅峰 + 月光</strong>。最晚班可能只剩龙山 + 月光。</li>
+      <li>带晕船药、防晒帽、驱蚊、换洗衣物、零食水。</li>
+      <li>点菜口令：砂锅浓汤 / 奶白汤，不辣、少盐、清淡。鱼头 3–4 斤，问清是否现杀。</li>
+    </ul>
+  </div>
+</section>
 
-    <section id="fri" class="page">
-      <div class="card">
-        <span class="tag">周五 A · 本趟推荐</span>
-        <h2>镇上吃饭 + 中心下午船</h2>
-        <ol>
-          <li>09:30 上城出发</li>
-          <li>12:00 到千岛湖镇，别先去郝力克</li>
-          <li>12:10 淳圆外（梦姑路 8-28）砂锅浓汤鱼头</li>
-          <li>13:10 中心码头换票，13:30 前上船</li>
-          <li>17:00 下船，约 45 分钟入住</li>
-        </ol>
-        <p class="muted">提前约中心湖区 12:00–14:00 班，孩子也要预约。优先看停岛有没有梅峰 + 月光。喂鱼在月光岛鱼乐桥，渔乐岛只是吃饭补给。</p>
-      </div>
-      <div class="card">
-        <h2>梅峰近照 · 2026 年 7 月</h2>
-        <div class="photo"><img src="photos/2026-07-31_meifeng-cablecar-kid_note6a6c463c_01.webp" alt="梅峰缆车车厢" /><p class="cap">2026-07-31 · 小孩坐在梅峰缆车里，窗外是中心湖区群岛</p></div>
-        <div class="photo"><img src="photos/2026-07-16_meifeng_note6a58dee7_01.webp" alt="梅峰山顶俯瞰" /><p class="cap">2026-07-16 · 山顶俯瞰，360° 群岛，不是黄山尖「公」字角度</p></div>
-        <div class="photo"><img src="photos/2026-07-25_meifengsuodao_note6a65b05f_02_ticket.webp" alt="梅峰索道票" /><p class="cap">2026-07-25 · 梅峰索道票根，来回约 60 元，以窗口为准</p></div>
-      </div>
-      <div class="choice"><strong>B 本趟赶不上</strong>东南早班喂鱼看猴。9:30 再先吃饭，售票窗基本过了。</div>
-      <div class="choice"><strong>C 备选</strong>堵到 12:30 还没进镇，直奔酒店乐园，湖留给周六傍晚落日游船。</div>
-    </section>
+<section id="fri" class="page">
+  <div class="card">
+    <span class="tag">周五 · 对照</span>
+    <h2>当天只选一套</h2>
+    <table>
+      <tr><th></th><th>A 本趟</th><th>B 赶不上</th><th>C 备选</th></tr>
+      <tr><td>核心</td><td>梅峰下午班</td><td>天下为公+鱼猴</td><td>乐园蹦床</td></tr>
+      <tr><td>出门</td><td>9:30 直奔镇上</td><td>须 7:00</td><td>9:30 直达酒店</td></tr>
+      <tr><td>坐船</td><td>中心 3–4 小时</td><td>东南早班 4–5 小时</td><td>可不上大船</td></tr>
+      <tr><td>不选如果</td><td>12:30 还没进镇</td><td>出发晚于 8:00</td><td>今天必须看千岛</td></tr>
+    </table>
+  </div>
 
-    <section id="sat" class="page">
-      <div class="choice on"><strong>A 推荐 · 华美胜地全天</strong>WILD WORLD、蹦床、萌宠。傍晚可选落日游船（界首列岛，不是 5A 门票船）。</div>
-      <div class="choice"><strong>B</strong>龙川湾 + 芹川。要开车。</div>
-      <div class="choice"><strong>C</strong>环湖公路 + 天屿山日落。弯多，会晕车别选。</div>
-      <div class="card">
-        <h2>乐园近照 · 2026 年夏</h2>
-        <div class="photo"><img src="photos/2026-06-21_gelin7_1.webp" alt="格林7号门头" /><p class="cap">2026-06-21 · 门头仍写格林 7 号探险乐园</p></div>
-        <div class="photo"><img src="photos/2026-06-21_gelin7_2.webp" alt="林间蹦床" /><p class="cap">2026-06-21 · 林间蹦床、网道，6 岁优先这个</p></div>
-        <div class="photo"><img src="photos/2026-08-21_wildworld_1.webp" alt="WILD WORLD 航拍" /><p class="cap">2026-08-21 · 航拍白色大字 WILD WORLD，山谷探险塔和吊桥</p></div>
-        <p class="muted">飞拉达 / 卡丁车先量身高，常见 1.2 米门槛。</p>
-      </div>
-    </section>
+  <div class="card">
+    <span class="tag">A · 本趟推荐</span>
+    <h2>镇上吃饭 + 中心下午船</h2>
+    <p class="muted">适合：9:30 出发、先吃饭、还想当天看见千岛。</p>
+    <h3>开车怎么走</h3>
+    <ul>
+      <li>上城上杭新景高速（杭千高速），约 2–2.5 小时、150 公里左右。周五 9:30 出城通常比早高峰好。</li>
+      <li>导航先搜「淳圆外」或「梦姑路 8-28」，<strong>不要</strong>搜郝力克。</li>
+      <li>车停镇上。行李留车上。下午下船再导航「千岛湖郝力克酒店」。</li>
+    </ul>
+    <h3>时间轴</h3>
+    <ol class="path">
+      <li><b>1</b><strong>09:30</strong> 杭州上城出发。</li>
+      <li><b>2</b><strong>12:00</strong> 进千岛湖镇。堵到 12:30 还没进镇，改走 C。</li>
+      <li><b>3</b><strong>12:10–13:00</strong> 淳圆外吃鱼头。临湖落地窗，有儿童椅，提前订临湖位。点砂锅浓汤鱼头、鸡汤鱼滑豆腐。吃完沿梦姑路去码头，很近。</li>
+      <li><b>4</b><strong>13:10</strong> 到中心湖区旅游码头（梦姑路 348 号一带）换票排队。建议 13:30 前上船。旺季尽量提前 1 小时到。</li>
+      <li><b>5</b><strong>13:20–17:00</strong> 下午船约 3–4 小时。常见梅峰 + 月光 / 龙山。渔乐岛不保证，也不要为喂鱼赌它。</li>
+      <li><b>6</b><strong>17:00–18:00</strong> 下船，开车约 45 分钟入住郝力克。晚上可在吟游 Club 再吃清淡一顿。</li>
+    </ol>
+  </div>
 
-    <section id="sun" class="page">
-      <div class="choice on"><strong>A 推荐</strong>上午萌宠 / 小项目 → 11:00 退房 → 12:00 酒店鱼头 → 14:00 返上城。</div>
-      <div class="choice"><strong>B</strong>补漏下姜村。退房后带行李，6 岁容易炸。</div>
-      <div class="choice"><strong>C</strong>庭院躺平再走。</div>
-      <p class="muted">周日再坐大船容易和返程打架。12:00 前退房，15:00 前上路。</p>
-    </section>
+  <div class="card">
+    <h2>游览路径：中心湖区下午班</h2>
+    <p>船班不同，停岛组合不同。上船先问船员今天停哪几岛、每岛停多久。原则：<strong>时间留给梅峰缆车</strong>，祠堂走马观花。</p>
+    <h3>1. 梅峰岛 · 必做</h3>
+    <ul>
+      <li>下船上岛 → 不要爬山 → 买<strong>往返缆车</strong>（常见 50–60 元，儿童以窗口为准）→ 坐约 5 分钟到山顶。</li>
+      <li>山顶观景台 360° 看群岛。老话说「不上梅峰观群岛，不识千岛真面目」。拍完就下山，别在亭子耗太久。</li>
+      <li>6 岁坐好别探身。湖面反光强，戴帽防晒。2026 年 6–8 月三特仍在发梅峰缆车，今夏能坐。</li>
+      <li>每岛停留常见 40–60 分钟，下午班可能更紧，下船上缆车别逛商店。</li>
+    </ul>
+    <div class="photo"><img src="photos/2026-07-31_meifeng-cablecar-kid_note6a6c463c_01.webp" alt="梅峰缆车" /><p class="cap">2026-07-31 · 小孩坐在梅峰缆车里，窗外是中心湖区群岛</p></div>
+    <div class="photo"><img src="photos/2026-07-16_meifeng_note6a58dee7_01.webp" alt="梅峰俯瞰" /><p class="cap">2026-07-16 · 山顶俯瞰，360° 群岛，不是黄山尖「公」字角度</p></div>
+    <div class="photo"><img src="photos/2026-07-25_meifengsuodao_note6a65b05f_02_ticket.webp" alt="索道票" /><p class="cap">2026-07-25 · 票面「梅峰索道·千岛湖梅峰揽胜」</p></div>
+    <h3>2. 月光岛 · 有就看鱼乐桥</h3>
+    <ul>
+      <li>偏爱情步道、状元桥。2026 年夏一手笔记：<strong>喂鱼在月光岛鱼乐桥</strong>，不在渔乐岛。</li>
+      <li>6 岁可以看桥上喂鱼。不自带投喂。时间紧就只走鱼乐桥，别逛锁文化展。</li>
+    </ul>
+    <h3>3. 龙山岛 · 走马观花</h3>
+    <ul>
+      <li>海瑞祠、书院，偏人文。6 岁容易腻。跟队伍走一圈就回船，别进祠堂细看。</li>
+    </ul>
+    <h3>4. 渔乐岛 · 只吃饭</h3>
+    <ul>
+      <li>近几个月笔记写得很一致：渔乐岛是吃饭补给点，「十分钟逛完」。不是喂鱼点。无合格喂鱼近照，不配图。</li>
+      <li>中午已经在淳圆外吃过，岛上不必再正餐。下船后也别在码头路边摊吃。</li>
+    </ul>
+    <p class="muted">船上：一层普通舱、二层观景舱，二层先到先得。甲板拉好孩子。备晕船药。</p>
+  </div>
 
-    <section id="food" class="page">
-      <div class="card">
-        <h2>点菜口令</h2>
-        <p>砂锅浓汤 / 奶白汤，不辣、少盐、清淡。鱼头 3–4 斤，问清是否现杀。避开码头路边摊。</p>
-      </div>
-      <div class="card">
-        <p><strong>淳圆外·寻味古村落</strong><br />梦姑路 8-28 · 周五中午首选 · 人均 80–100 · 有儿童椅，提前订临湖位</p>
-        <p><strong>郝力克酒店餐厅</strong><br />吟游 Club / 喜鹊树 · 周五晚、周六、周日最省事</p>
-        <p><strong>千岛湖鱼味馆（总店）</strong><br />新安大街 / 渔人码头 · 人均 120–200</p>
-        <p><strong>渔你有约</strong><br />南景路 / 鱼街 · 可减盐</p>
-      </div>
-    </section>
-  </main>
-  <nav>
-    <div>
-      <button class="on" data-p="home">概览</button>
-      <button data-p="fri">周五</button>
-      <button data-p="sat">周六</button>
-      <button data-p="sun">周日</button>
-      <button data-p="food">美食</button>
-    </div>
-  </nav>
-  <script>
-    const pages = document.querySelectorAll('.page');
-    const buttons = document.querySelectorAll('nav button');
-    buttons.forEach((btn) => {
-      btn.onclick = () => {
-        buttons.forEach((b) => b.classList.remove('on'));
-        pages.forEach((p) => p.classList.remove('on'));
-        btn.classList.add('on');
-        document.getElementById(btn.dataset.p).classList.add('on');
-        window.scrollTo(0, 0);
-      };
-    });
-  </script>
+  <div class="choice"><strong>B 本趟赶不上</strong>东南早班：黄山尖缆车「天下为公」→ 天池岛喂鱼 → 桂花岛猴子。须 7:00 出门。9:30 再先吃饭，东南下午售票窗（常 12:00–13:00）基本过了，下午班还常砍桂花岛。</div>
+  <div class="choice"><strong>C 备选：先到酒店</strong>导航郝力克 → 12:00 寄存（入住 14:00）→ 园区午餐 → 下午 WILD WORLD 蹦床萌宠 → 晚上酒店鱼头。看不到 5A 全景，周六傍晚可用落日游船补湖。</div>
+</section>
+
+<section id="sat" class="page">
+  <div class="card">
+    <span class="tag">周六 · 对照</span>
+    <h2>周五已经坐船，优先不离开度假区</h2>
+    <table>
+      <tr><th></th><th>A 推荐</th><th>B</th><th>C</th></tr>
+      <tr><td>核心</td><td>乐园+水上+萌宠</td><td>湿地+古村</td><td>环湖+日落</td></tr>
+      <tr><td>开车</td><td>基本不开</td><td>中等</td><td>最多、弯道多</td></tr>
+      <tr><td>孩子</td><td>最高</td><td>看不是玩</td><td>靠停车点</td></tr>
+      <tr><td>不选如果</td><td>已经玩腻园区</td><td>只想蹦床</td><td>会晕车</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <span class="tag">A · 推荐</span>
+    <h2>华美胜地全天嗨玩</h2>
+    <p>现用名 <strong>WILD WORLD 7 号探索乐园</strong>，路牌可能仍写格林 7 号。酒店步行可达。先问前台当天适合 6 岁的项目再买票，不要按旧攻略买陆地通票。</p>
+    <h3>游览路径（不用开车）</h3>
+    <ol class="path">
+      <li><b>1</b><strong>08:30</strong> 酒店早餐。问前台：蹦床、萌宠、青山营、身高门槛、落日游船几点。</li>
+      <li><b>2</b><strong>09:30–12:00</strong> 乐园开门后先蹦床 / 网道 / 木质攀爬，再萌宠。青山营听鸟、昆虫旅馆适合歇脚。飞拉达、UTV、高空秋千、卡丁车先量身高，常见 1.2 米。</li>
+      <li><b>3</b><strong>12:00</strong> 回酒店或园区吃不辣鱼头，午休。</li>
+      <li><b>4</b><strong>14:00–17:00</strong> 换 UPUP 水上：桨板、水上自行车、碰碰船。必须穿救生衣，家长贴边。备两套换洗衣物。绿道可骑一圈亚运主题段。</li>
+      <li><b>5</b><strong>17:30</strong> 可选「千岛迷宫」落日游船，约 90 分钟，走<strong>界首列岛</strong>，不是 5A 中心 / 东南门票船。</li>
+      <li><b>6</b><strong>19:00</strong> 酒店鱼头汤，回别墅。累了随时能回，不必排满。</li>
+    </ol>
+    <p class="muted">乐园常见 09:30–17:30。1.2 米以下入园常见免费，项目另计，以现场为准。</p>
+    <div class="photo"><img src="photos/2026-06-21_gelin7_1.webp" alt="格林7号门头" /><p class="cap">2026-06-21 · 门头仍写格林 7 号探险乐园</p></div>
+    <div class="photo"><img src="photos/2026-06-21_gelin7_2.webp" alt="林间蹦床" /><p class="cap">2026-06-21 · 林间蹦床、网道，6 岁优先这个</p></div>
+    <div class="photo"><img src="photos/2026-08-21_wildworld_1.webp" alt="WILD WORLD" /><p class="cap">2026-08-21 · 航拍白色大字 WILD WORLD，山谷探险塔和吊桥</p></div>
+  </div>
+  <div class="choice"><strong>B 龙川湾 + 芹川</strong>08:30 酒店出发 → 09:30 湿地泛舟 / 森林小火车（防蚊防滑，不是张家界高铁小火车）→ 中午农家或回镇上鱼头 → 14:30 芹川古村（免费，光裕堂、溪水石桥，无机动项目）→ 17:30 回酒店。和中心船票不通用。</div>
+  <div class="choice"><strong>C 环湖 + 天屿山日落</strong>09:00 淳开线 / 淳杨线精华段，限速 40–60，弯多会车 → 12:00 骑龙巷或镇上 → 14:30 啤酒小镇灯塔（免费）→ 17:00 天屿山电梯上看日落 → 19:00 淳圆外或鱼味馆。会晕车别选。</div>
+</section>
+
+<section id="sun" class="page">
+  <div class="card">
+    <span class="tag">周日 · 对照</span>
+    <h2>12:00 前退房，15:00 前上路</h2>
+    <p class="muted">返杭仍约 2–2.5 小时。周日再坐大船很容易和返程打架。</p>
+    <table>
+      <tr><th></th><th>A 推荐</th><th>B</th><th>C</th></tr>
+      <tr><td>安排</td><td>酒店收尾+鱼头</td><td>补漏再走</td><td>庭院躺平</td></tr>
+      <tr><td>赶路</td><td>低</td><td>高</td><td>最低</td></tr>
+      <tr><td>新景点</td><td>无</td><td>下姜村或短线湖</td><td>无</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <span class="tag">A · 推荐</span>
+    <h2>酒店周边悠闲</h2>
+    <ol class="path">
+      <li><b>1</b><strong>08:30</strong> 早餐后萌宠或乐园剩余小项目。只玩一会儿。</li>
+      <li><b>2</b><strong>11:00</strong> 退房。先问延迟或寄存，行李整理好再玩上午。</li>
+      <li><b>3</b><strong>12:00</strong> 酒店清淡鱼头午餐，不用再开车找店。</li>
+      <li><b>4</b><strong>14:00</strong> 导航回杭州上城。车上备水零食，孩子可能补觉。</li>
+    </ol>
+  </div>
+  <div class="choice"><strong>B 补漏</strong>08:00 退房后去下姜村（免费田园，不是 5A 岛）或短线湖。12:00 顺路午餐，13:30 返程。周日大船容易误点，优先下姜、不上船。退房后带行李，6 岁容易炸。</div>
+  <div class="choice"><strong>C 躺平</strong>09:00 庭院 / 泳池或亚运绿道短走 → 11:30 退房+酒店午餐 → 14:00 返程。</div>
+</section>
+
+<section id="food" class="page">
+  <div class="card">
+    <h2>统一点菜</h2>
+    <p>「砂锅浓汤 / 奶白汤，不辣、少盐、清淡」。鱼头选 3–4 斤，问清是否现杀。避开码头路边摊。</p>
+  </div>
+  <div class="card">
+    <h3>1. 淳圆外·寻味古村落 · 周五中午首选</h3>
+    <p>梦姑路 8-28，近夜游码头 / 中心码头。人均 80–100。临湖落地窗、徽派、现捞有机鳙鱼、明厨、儿童椅。点砂锅浓汤鱼头、鸡汤鱼滑豆腐。提前订临湖位。</p>
+    <h3>2. 郝力克酒店餐厅 · 其余顿最省事</h3>
+    <p>吟游 Club / 喜鹊树。周五晚、周六、周日不用开车。本地鱼头汤 + 农家菜，点不辣版。</p>
+    <h3>3. 千岛湖鱼味馆（总店）</h3>
+    <p>新安大街 / 渔人码头。人均 120–200。1980 年老字号，一鱼三吃。全部要求不辣。</p>
+    <h3>4. 渔你有约</h3>
+    <p>南景路 / 鱼街。人均 80–120。淳牌有机鱼，可按小孩减盐。</p>
+    <h3>5. 好东家 / 姜君府</h3>
+    <p>阳光路 / 渔街。家常土菜。姜君府点奶白鱼头，避开剁椒辣版。</p>
+    <h3>6. 临岐鱼馆·羡山饭店</h3>
+    <p>临岐 / 羡山半岛。只有顺路才去。</p>
+  </div>
+  <div class="card">
+    <h2>备忘</h2>
+    <ul>
+      <li>环湖路限速 40–60，弯多会车，勿路边乱停。酒店免费停车。</li>
+      <li>落日游船是华美胜地园区项目，不是 5A 湖区门票船。</li>
+      <li>黄山尖、桂花岛是东南线，本趟周五不走。已有 2026-08 黄山尖近照，但不拿来选周五 A。</li>
+    </ul>
+  </div>
+</section>
+</main>
+<nav>
+  <div>
+    <button class="on" data-p="home">概览</button>
+    <button data-p="fri">周五</button>
+    <button data-p="sat">周六</button>
+    <button data-p="sun">周日</button>
+    <button data-p="food">美食</button>
+  </div>
+</nav>
+<script>
+  const pages = document.querySelectorAll('.page');
+  const buttons = document.querySelectorAll('nav button');
+  buttons.forEach((btn) => {
+    btn.onclick = () => {
+      buttons.forEach((b) => b.classList.remove('on'));
+      pages.forEach((p) => p.classList.remove('on'));
+      btn.classList.add('on');
+      document.getElementById(btn.dataset.p).classList.add('on');
+      window.scrollTo(0, 0);
+    };
+  });
+</script>
 </body>
 </html>
