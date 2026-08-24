@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "千岛湖亲子攻略",
+      "hasCanvas": false,
+      "bodyTextLen": 643,
+      "bodyTextHash": "cdf45b90aec4eea69c7e708cc719a59bff0f804bbda5d98dbf9195ae37b566ed",
+      "bodyTextPrefix": "QIANDAO LAKE · FAMILY 千岛湖亲子自驾攻略 郝力克酒店 · 周五至周日 · 不辣鱼头 点底部「周五 / 周六",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "千岛湖亲子攻略",
+      "hasCanvas": false,
+      "bodyTextLen": 643,
+      "bodyTextHash": "cdf45b90aec4eea69c7e708cc719a59bff0f804bbda5d98dbf9195ae37b566ed",
+      "bodyTextPrefix": "QIANDAO LAKE · FAMILY 千岛湖亲子自驾攻略 郝力克酒店 · 周五至周日 · 不辣鱼头 点底部「周五 / 周六",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
